@@ -1,0 +1,62 @@
+.file-container {
+    position: relative;
+    width: 300px;
+    margin-top: 20px;
+  }
+  
+  .file-container-inner {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    overflow-y: auto;
+    border-right:  1px solid #050000;
+    border-top: 1px solid #050000;
+  }
+  .folders{
+    padding: 0.2rem 0.2rem;
+  }
+  .folder{
+    cursor: pointer;
+    padding: 1rem 1rem;
+    width: 100%;
+    /* border-bottom: 1px solid #e3d3d3 */
+  }
+  .folder-name{
+    width: 100%;
+  }
+  .file-input{
+    outline: none;
+  }
+  .file-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 10px;
+    outline: none;
+  }
+  .file-input:focus {
+    border-color: #007bff; 
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+  .file-create-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.3rem;
+  }
+  .close-button{
+    height: 25px;
+    width: 25px;
+    border-radius: 25px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #ccc;
+    cursor: pointer;
+  }
+  .bottom-border{
+    border-bottom: 1px solid #e3d3d3
+  }
