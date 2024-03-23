@@ -1,11 +1,15 @@
-import { useState } from "react";
 import Folder from "./Folder";
 
-const Folders = ({ explorer }) => {
+const Folders = ({ nodes=[],currentNode=[], handleNode }) => {
   return (
     <ul className="folders">
-      {explorer.map((folder, index) => (
-          <Folder folder={folder} key={index}/>
+      {currentNode.map((node) => (
+        <Folder
+          folder={node}
+          key={node.location}
+          nodes={nodes}
+          handleNode={handleNode}
+        />
       ))}
     </ul>
   );

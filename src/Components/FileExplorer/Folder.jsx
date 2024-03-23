@@ -1,11 +1,9 @@
 import { useState } from "react";
 import Folders from "./Folders";
-import { files } from "../../constants/file";
 
-const Folder = ({ folder }) => {
+const Folder = ({ folder, nodes, handleNode }) => {
   const [expand, setExpand] = useState(false);
-  const [isCreate, setCreate] = useState(false);
-  const [createdFileName, setCreatedFileName] = useState("");
+  const [showInput, setShowInput] = useState(false);
   const handleExpand = (e) => {
     e.stopPropagation();
     setExpand(!expand);
@@ -14,49 +12,21 @@ const Folder = ({ folder }) => {
     event.preventDefault();
     event.stopPropagation();
     if (folder.isFolder) {
-      setCreate(true);
+      setShowInput(true);
     }
   };
-  const handleFileNameChange = (e) => {
-    setCreatedFileName(e.target.value);
-  };
-  const handleinputClick = (event) => {
-    event.stopPropagation();
-  };
-
-  const closeFileCreation = (event) => {
-    event.stopPropagation();
-    setCreate(false);
-    setCreatedFileName("");
-  };
-  const handleKeyPress = (event, folder) => {
-    if (event.key === "Enter") {
-      const createdFile = {
-        name: createdFileName,
-        isFolder: false,
+  const addFolder = (e) => {
+    e.stopPropagation();
+    if (e.keyCode === 13 && e.target.value) {
+      const node = {
+        name: e.target.value,
+        isFolder: true,
         location: folder.location + folder.children.length,
         children: [],
       };
-      setObjectInExactLocation(
-        folder.location,
-        0,
-        files,
-        createdFile
-      );
-      closeFileCreation(event);
+      setShowInput(false);
+      handleNode(folder.location, 0, nodes, node);
     }
-  };
-
-  const setObjectInExactLocation = (id, strt, parentObj, createdFile) => {
-    let currObj = parentObj;
-    if (strt >= id.length) {
-      currObj.push(createdFile);
-      return;
-    } else {
-      currObj = parentObj[id.charAt(strt)].children;
-      setObjectInExactLocation(id, strt + 1, currObj, createdFile);
-    }
-    return currObj;
   };
 
   return (
@@ -66,31 +36,23 @@ const Folder = ({ folder }) => {
       onContextMenu={(e) => handleRightClick(e, folder)}
     >
       {folder.isFolder ? `📁${folder.name}` : `🗒️${folder.name}`}
-      {isCreate ? (
-        <div className="file-create-container">
-          <input
-            type="text"
-            className="file-input"
-            onClick={(e) => handleinputClick(e)}
-            onChange={handleFileNameChange}
-            placeholder="Create a new file"
-            value={createdFileName}
-            onKeyPress={(e) => handleKeyPress(e, folder)}
-          />
-          <button
-            type="button"
-            className="close-button"
-            onClick={closeFileCreation}
-            aria-label="Close"
-          >
-            &times;
-          </button>
-        </div>
+      {showInput ? (
+        <input
+          type="text"
+          className="file-input"
+          placeholder="Create a new file"
+          onKeyDown={addFolder}
+          onBlur={() => setShowInput(false)}
+        />
       ) : null}
       <ul>
         {folder?.children?.length && expand ? (
           <li>
-            <Folders explorer={folder.children} />
+            <Folders
+              nodes={nodes}
+              currentNode={folder.children}
+              handleNode={handleNode}
+            />
           </li>
         ) : (
           ""
