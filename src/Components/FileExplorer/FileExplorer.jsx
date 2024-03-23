@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./FileExplorer.css";
 import Folders from "./Folders";
-import { files } from "../../constants/file";
+import { files } from "../../constants/constant";
 import useInsert from "../../hooks/useInsert";
 
 function FileExplorer() {

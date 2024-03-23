@@ -1,7 +1,8 @@
 import React from "react";
 import "./App.css";
 import FileExplorer from "./Components/FileExplorer/FileExplorer";
-import { files } from "./constants/file";
+import { files } from "./constants/constant";
+import MultiSelect from "./Components/React-Select/MultiSelect";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
         <h3>React Interview Preparations</h3>
       </div>
       <div className="apps">
-        <FileExplorer />
+        {/* <FileExplorer /> */}
+        <MultiSelect />
       </div>
     </div>
   );
