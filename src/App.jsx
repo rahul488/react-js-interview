@@ -3,6 +3,7 @@ import "./App.css";
 import FileExplorer from "./Components/FileExplorer/FileExplorer";
 import { files } from "./constants/constant";
 import MultiSelect from "./Components/React-Select/MultiSelect";
+import Stepper from "./Components/Stepper/Stepper";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       </div>
       <div className="apps">
         {/* <FileExplorer /> */}
-        <MultiSelect />
+        {/* <MultiSelect /> */}
+        <Stepper />
       </div>
     </div>
   );

@@ -58,7 +58,6 @@ const MultiSelect = () => {
       setCountry((prv)=>countryList.filter((cntr)=>!countrySet.has(cntr.value)))
     }
   };
-  console.log(countrySet,country,'ll')
   return (
     <div className="select-container">
       <div className="select-inner-container">
