@@ -20,7 +20,8 @@ const Folder = ({ folder, nodes, handleNode }) => {
     if (e.keyCode === 13 && e.target.value) {
       const node = {
         name: e.target.value,
-        isFolder: true,
+        //make create file type only
+        isFolder: false,
         location: folder.location + folder.children.length,
         children: [],
       };
