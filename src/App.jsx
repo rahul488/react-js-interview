@@ -4,6 +4,8 @@ import FileExplorer from "./Components/FileExplorer/FileExplorer";
 import { files } from "./constants/constant";
 import MultiSelect from "./Components/React-Select/MultiSelect";
 import Stepper from "./Components/Stepper/Stepper";
+import Selectablegrid from "./Components/SelectableGrid/SelectableGrid";
+import Board from "./Components/TicTacToe/Board";
 
 function App() {
   return (
@@ -14,7 +16,9 @@ function App() {
       <div className="apps">
         {/* <FileExplorer /> */}
         {/* <MultiSelect /> */}
-        <Stepper />
+        {/* <Stepper /> */}
+        {/* <Selectablegrid rows={10} cols={10} /> */}
+        <Board />
       </div>
     </div>
   );

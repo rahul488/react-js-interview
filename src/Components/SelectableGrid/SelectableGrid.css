@@ -1,0 +1,24 @@
+.container {
+    display: grid;
+    margin-top: 10px;
+    justify-content: center;
+    grid-template-columns: repeat(10, 40px);
+    grid-template-rows: repeat(10, 40px);
+    user-select: none;
+    /* display: flex;
+    width: 420px;
+    flex-wrap: wrap;
+    justify-content: center; */
+}
+
+.box {
+    height: 40px;
+    width: 40px;
+    border: 1px solid orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.selected{
+    background-color: aqua;
+}

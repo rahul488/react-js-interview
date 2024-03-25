@@ -1,0 +1,29 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(3, 40px);
+}
+
+.square {
+    border: 1px solid #020000;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.text-center{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    background-color: green;
+    color: white;
+}
