@@ -1,0 +1,50 @@
+.post-container{
+   margin: 50px 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+.card{
+    border: 1px solid #d2c9c9;
+    height: 300px;
+    width: 300px;
+    padding: 0.5rem 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.post-title{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: orange;
+}
+.post-desc{
+    font-size: 15px;
+background-color: rgb(210, 182, 171);
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.page-container{
+    display: flex;
+    gap: 0.3rem;
+}
+.page{
+    height: 40px;
+    width: 40px;
+    border: 1px solid #f1d8d8;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.active{
+    background-color: green;
+    color: white;
+}

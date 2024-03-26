@@ -196,3 +196,32 @@ export const checkOutSteps = [
     step: 4,
   },
 ];
+
+export const Product=[
+  {
+    name:'Apple',
+    price:100,
+    id:1
+  },
+  {
+    name:'Orange',
+    price:150,
+    id:2
+  },
+  {
+    name:'Grapes',
+    price:'100',
+    id:3
+  },
+  {
+    name:'Strawbery',
+    price:200,
+    id:4
+  }
+]
+export const getPost=(skip=10)=>{
+  return `https://dummyjson.com/posts?limit=${10}&skip=${skip}&select=title,reactions,userId,body`
+}
+export const getProduct=(skip=10)=>{
+  return `https://dummyjson.com/products?limit=10&skip=${skip}&select=title,price,description`
+}

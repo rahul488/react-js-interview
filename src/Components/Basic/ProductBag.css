@@ -1,0 +1,15 @@
+.product-container{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    margin-top: 20px;
+}
+.product-price{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.price{
+    display: flex;
+    justify-content: end;
+}
